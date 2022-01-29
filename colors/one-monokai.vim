@@ -81,7 +81,8 @@ let s:warmgrey    = { "gui": "#676E7B", "cterm": "60" }
 
 let s:pink        = { "gui": "#E06C75", "cterm": "168" }
 let s:green       = { "gui": "#98C379", "cterm": "114" }
-let s:aqua        = { "gui": "#56b6c2", "cterm": "73" }
+let s:aqua        = { "gui": "#54bbc9", "cterm": "73" }
+let s:blue        = { "gui": "#5da7e3", "cterm": "75" }
 let s:yellow      = { "gui": "#E5C07B", "cterm": "180" }
 let s:orange      = { "gui": "#D19A66", "cterm": "173" }
 let s:purple      = { "gui": "#C678DD", "cterm": "176" }
@@ -121,9 +122,9 @@ call s:h("CursorLineNr",  { "fg": s:white,     "bg": s:black})
 call s:h("SignColumn",    {                     "bg": s:black})
 
 " misc
-call s:h("SpecialKey",    { "fg": s:pink })
+call s:h("SpecialKey",    { "fg": s:white })
 call s:h("Title",         { "fg": s:yellow })
-call s:h("Directory",     { "fg": s:aqua })
+call s:h("Directory",     { "fg": s:white })
 
 " diff
 call s:h("DiffAdd",       { "fg": s:addfg,      "bg": s:addbg })
@@ -152,18 +153,18 @@ call s:h("Boolean",       { "fg": s:aqua })
 call s:h("Character",     { "fg": s:yellow })
 call s:h("String",        { "fg": s:yellow })
 
-call s:h("Type",          { "fg": s:aqua })
-call s:h("Structure",     { "fg": s:aqua })
-call s:h("StorageClass",  { "fg": s:aqua })
-call s:h("Typedef",       { "fg": s:aqua })
+call s:h("Type",          { "fg": s:blue })
+call s:h("Structure",     { "fg": s:blue })
+call s:h("StorageClass",  { "fg": s:blue })
+call s:h("Typedef",       { "fg": s:blue })
     
 call s:h("Identifier",    { "fg": s:green })
 call s:h("Function",      { "fg": s:green })
                          
-call s:h("Statement",     { "fg": s:pink })
-call s:h("Operator",      { "fg": s:pink })
-call s:h("Label",         { "fg": s:pink })
-call s:h("Keyword",       { "fg": s:aqua })
+call s:h("Statement",     { "fg": s:pink }) " if, else, while, default
+call s:h("Operator",      { "fg": s:pink }) " +, -, *
+call s:h("Label",         { "fg": s:pink }) " div, p, h1
+call s:h("Keyword",       { "fg": s:aqua }) " const, let, var, return
 "        Conditional"
 "        Repeat"
 "        Exception"
@@ -174,11 +175,11 @@ call s:h("Define",        { "fg": s:pink })
 call s:h("Macro",         { "fg": s:green })
 call s:h("PreCondit",     { "fg": s:green })
                            
-call s:h("Special",       { "fg": s:purple })
-call s:h("SpecialChar",   { "fg": s:pink })
-call s:h("Delimiter",     { "fg": s:pink })
-call s:h("SpecialComment",{ "fg": s:aqua })
-call s:h("Tag",           { "fg": s:pink })
+call s:h("Special",       { "fg": s:blue })
+call s:h("SpecialChar",   { "fg": s:white })
+call s:h("Delimiter",     { "fg": s:white })
+call s:h("SpecialComment",{ "fg": s:white })
+call s:h("Tag",           { "fg": s:white })
 "        Debug"
 
 call s:h("Todo",          { "fg": s:orange,   "format": "bold,italic" })
@@ -221,17 +222,17 @@ call s:h("vimCommand",              { "fg": s:pink })
 call s:h("jsFuncName",          { "fg": s:green })
 call s:h("jsThis",              { "fg": s:pink })
 call s:h("jsFunctionKey",       { "fg": s:green })
-call s:h("jsPrototype",         { "fg": s:aqua })
-call s:h("jsExceptions",        { "fg": s:aqua })
-call s:h("jsFutureKeys",        { "fg": s:aqua })
-call s:h("jsBuiltins",          { "fg": s:aqua })
-call s:h("jsArgsObj",           { "fg": s:aqua })
-call s:h("jsStatic",            { "fg": s:aqua })
-call s:h("jsSuper",             { "fg": s:aqua })
+call s:h("jsPrototype",         { "fg": s:blue })
+call s:h("jsExceptions",        { "fg": s:blue })
+call s:h("jsFutureKeys",        { "fg": s:blue })
+call s:h("jsBuiltins",          { "fg": s:blue })
+call s:h("jsArgsObj",           { "fg": s:blue })
+call s:h("jsStatic",            { "fg": s:blue })
+call s:h("jsSuper",             { "fg": s:blue })
 call s:h("jsFuncArgRest",       { "fg": s:purple, "format": "italic" })                                 
 call s:h("jsFuncArgs",          { "fg": s:orange, "format": "italic" })
-call s:h("jsStorageClass",      { "fg": s:aqua })
-call s:h("jsDocTags",           { "fg": s:aqua,   "format": "italic" })
+call s:h("jsStorageClass",      { "fg": s:blue })
+call s:h("jsDocTags",           { "fg": s:blue,   "format": "italic" })
 
 " Typescript
 call s:h("typescriptArrowFuncArg",        { "fg": s:orange, "format": "italic" })
@@ -274,46 +275,6 @@ call s:h("cssCommonAttr",       { "fg": s:pink })
 call s:h("cssBraces" ,          { "fg": s:white })
 call s:h("cssClassNameDot",     { "fg": s:pink })
 call s:h("cssURL",              { "fg": s:orange, "format": "underline,italic" })
-
-" LESS
-call s:h("lessVariable",        { "fg": s:green })
-
-" ruby
-call s:h("rubyInterpolationDelimiter",  {})
-call s:h("rubyInstanceVariable",        {})
-call s:h("rubyGlobalVariable",          {})
-call s:h("rubyClassVariable",           {})
-call s:h("rubyPseudoVariable",          {})
-call s:h("rubyFunction",                { "fg": s:green })
-call s:h("rubyStringDelimiter",         { "fg": s:yellow })
-call s:h("rubyRegexp",                  { "fg": s:yellow })
-call s:h("rubyRegexpDelimiter",         { "fg": s:yellow })
-call s:h("rubySymbol",                  { "fg": s:purple })
-call s:h("rubyEscape",                  { "fg": s:purple })
-call s:h("rubyInclude",                 { "fg": s:pink })
-call s:h("rubyOperator",                { "fg": s:pink })
-call s:h("rubyControl",                 { "fg": s:pink })
-call s:h("rubyClass",                   { "fg": s:pink })
-call s:h("rubyDefine",                  { "fg": s:pink })
-call s:h("rubyException",               { "fg": s:pink })
-call s:h("rubyRailsARAssociationMethod",{ "fg": s:orange })
-call s:h("rubyRailsARMethod",           { "fg": s:orange })
-call s:h("rubyRailsRenderMethod",       { "fg": s:orange })
-call s:h("rubyRailsMethod",             { "fg": s:orange })
-call s:h("rubyConstant",                { "fg": s:aqua })
-call s:h("rubyBlockArgument",           { "fg": s:orange })
-call s:h("rubyBlockParameter",          { "fg": s:orange })
-
-" eruby
-call s:h("erubyDelimiter",              {})
-call s:h("erubyRailsMethod",            { "fg": s:aqua })
-
-" c
-call s:h("cLabel",                      { "fg": s:pink })
-call s:h("cStructure",                  { "fg": s:aqua})
-call s:h("cStorageClass",               { "fg": s:pink})
-call s:h("cInclude",                    { "fg": s:pink})
-call s:h("cDefine",                     { "fg": s:pink})
 
 "Operator Highlighting (from https://github.com/Valloric/vim-operator-highlight)
 "-------------------
